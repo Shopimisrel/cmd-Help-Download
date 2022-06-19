@@ -41,13 +41,13 @@ for %%i in (*.ai,*.psd,*.indd) do md "Documents\Adobe files" & move "%%i" "Docum
 ::Video files
 for %%i in (*.3g2,*.3gp,*.3gp2,*.3gpp,*.amr,*.amv,*.asf,*.avi,*.bdmv,*.bik,*.d2v,*.divx,*.drc,*.dsa,*.dsm,*.dss,*.dsv,*.evo,*.f4v,*.flc,*.fli,*.flic,*.flv,*.hdmov,*.ifo,*.ivf,*.m1v,*.m2p,*.m2t,*.m2ts,*.m2v,*.m4b,*.m4p,*.m4v,*.mkv,*.mp2v,*.mp4,*.mp4v,*.mpe,*.mpeg,*.mpg,*.mpls,*.mpv2,*.mpv4,*.mov,*.mts,*.ogm,*.ogv,*.pss,*.pva,*.qt,*.ram,*.ratdvd,*.rm,*.rmm,*.rmvb,*.roq,*.rpm,*.smil,*.smk,*.swf,*.tp,*.tpr,*.ts,*.vob,*.vp6,*.webm,*.wm,*.wmp,*.wmv) do if exist %%i md "Video" & move "%%i" "Video">>Actions-performed.txt & cls
 ::Audio files
-for %%i in (*.aac,*.ac3,*.aif,*.aifc,*.aiff,*.au,*.cda,*.dts,*.fla,*.flac,it,*.m1a,*.m2a,*.m3u,*.m4a,*.mid,*.midi,*.mka,*.mod,*.mp2,*.mp3,*.mpa,*.ogg,*.ra,*.rmi,*.spc,*.rmi,*.snd,*.umx,*.voc,*.wav,*.wma) do if exist %%i md "ΧΧ•Χ“Χ™Χ•" & move "%%i" "ΧΧ•Χ“Χ™Χ•">>Actions-performed.txt & cls
+for %%i in (*.aac,*.ac3,*.aif,*.aifc,*.aiff,*.au,*.cda,*.dts,*.fla,*.flac,it,*.m1a,*.m2a,*.m3u,*.m4a,*.mid,*.midi,*.mka,*.mod,*.mp2,*.mp3,*.mpa,*.ogg,*.ra,*.rmi,*.spc,*.rmi,*.snd,*.umx,*.voc,*.wav,*.wma) do if exist %%i md "ΰεγιε" & move "%%i" "ΰεγιε">>Actions-performed.txt & cls
 ::Archive files
 for %%i in (*.7z,*.ace,*.arj,*.bz2,*.cab,*.gz,*.gzip,*.jar,*.r00,*.r01,*.r02,*.r03,*.r04,*.r05,*.r06,*.r07,*.r08,*.r09,*.r10,*.r11,*.r12,*.r13,*.r14,*.r15,*.r16,*.r17,*.r18,*.r19,*.r20,*.r21,*.r22,*.r23,*.r24,*.r25,*.r26,*.r27,*.r28,*.r29,*.rar,*.tar,*.tgz,*.z,*.zip) do if exist %%i md "Archive files" & move "%%i" "Archive files" >>Actions-performed.txt & cls
 ::Execution files
 for %%i in (*.exe,*.msi,*.msp,*.scr) do md "Execution files" & move "%%i" "Execution files">>Actions-performed.txt & cls
 ::Applications
-for %%i in (*.apk,*.apk) do md "Execution files\ΧΧ¤ΧΧ™Χ§Χ¦Χ™Χ•Χª" & move "%%i" "Execution files\Applications">>Actions-performed.txt & cls
+for %%i in (*.apk,*.apk) do md "Execution files\ΰτμιχφιεϊ" & move "%%i" "Execution files\Applications">>Actions-performed.txt & cls
 ::Scripts
 for %%i in (*.bat,*.cmd,*.ps1,*.reg,*.py) do md "Execution files/Scripts" & move "%%i" "Execution files/Scripts">>Actions-performed.txt & cls
 ::file iso

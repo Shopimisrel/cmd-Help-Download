@@ -33,7 +33,7 @@ cd /d "%userprofile%\downloads"
 cd /d %p%
 :go
 ::Documents
-for %%i in (*.chm,*.cpp,*.pub,*.pubx,*.csv,*.cxx,*.doc,*.docm,*.docx,*.dot,*.dotm,*.dotx,*.h,*.hpp,*.htm,*.html,*.hxx,*.ini,*.java,*.lua,*.mht,*.mhtml,*.odt,*.pdf,*.potx,*.potm,*.ppam,*.ppsm,*.ppsx,*.pps,*.ppt,*.pptm,*.pptx,*.rtf,*.sldm,*.sldx,*.thmx,*.txt,*.vsd,*.wpd,*.wps,*.wri,*.xlam,*.xls,*.xlsb,*.xlsm,*.xlsx,*.xltm,*.xltx,*.xml) do if exist %%i md "Documents" & move "%%i" "Documents">>Actions-performed.txt & cls
+for %%i in (*.chm,*.md,*.cpp,*.pub,*.pubx,*.csv,*.cxx,*.doc,*.docm,*.docx,*.dot,*.dotm,*.dotx,*.h,*.hpp,*.htm,*.html,*.hxx,*.ini,*.java,*.lua,*.mht,*.mhtml,*.odt,*.pdf,*.potx,*.potm,*.ppam,*.ppsm,*.ppsx,*.pps,*.ppt,*.pptm,*.pptx,*.rtf,*.sldm,*.sldx,*.thmx,*.txt,*.vsd,*.wpd,*.wps,*.wri,*.xlam,*.xls,*.xlsb,*.xlsm,*.xlsx,*.xltm,*.xltx,*.xml) do if exist %%i md "Documents" & move "%%i" "Documents">>Actions-performed.txt & cls
 ::Fonts
 for %%i in (*.ttf,*.fnt,*.otf) do md "Execution files/Fonts" & move "%%i" "Execution files/Fonts">>Actions-performed.txt & cls
 ::Adobe
@@ -60,7 +60,7 @@ echo ================
 if exist Actions-performed (
 echo :Number of files transferred & find /c "1" Actions performed.txt & del Actions-performed.txt
 ) else (
-echo No files found! & del Actions-performed.txt
+echo No files found! Or there were duplicate documents in the source folder & del Actions-performed.txt
 )
 echo.
 echo ...Click something to exit & pause>nul 

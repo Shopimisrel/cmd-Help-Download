@@ -3,7 +3,6 @@
 chcp 1255>nul
 color b
 title מסדר תקיית ההורדות
-
 echo.
 echo.
 choice /c 123 /m ">>> 3 שקה תודוא 2 שקה תורחא תויקיתל 1 שקה תודרוהה תייקית תא רדסל ןיינועמ התא םא"
@@ -34,7 +33,7 @@ cd /d "%userprofile%\downloads"
 cd /d %p%
 :go
 ::מסמכים
-for %%i in (*.chm,*.cpp,*.pub,*.pubx,*.csv,*.cxx,*.doc,*.docm,*.docx,*.dot,*.dotm,*.dotx,*.h,*.hpp,*.htm,*.html,*.hxx,*.ini,*.java,*.lua,*.mht,*.mhtml,*.odt,*.pdf,*.potx,*.potm,*.ppam,*.ppsm,*.ppsx,*.pps,*.ppt,*.pptm,*.pptx,*.rtf,*.sldm,*.sldx,*.thmx,*.txt,*.vsd,*.wpd,*.wps,*.wri,*.xlam,*.xls,*.xlsb,*.xlsm,*.xlsx,*.xltm,*.xltx,*.xml) do if exist %%i md "מסמכים" & move "%%i" "מסמכים">>סיכום.txt & cls
+for %%i in (*.chm,*.md,*.cpp,*.pub,*.pubx,*.csv,*.cxx,*.doc,*.docm,*.docx,*.dot,*.dotm,*.dotx,*.h,*.hpp,*.htm,*.html,*.hxx,*.ini,*.java,*.lua,*.mht,*.mhtml,*.odt,*.pdf,*.potx,*.potm,*.ppam,*.ppsm,*.ppsx,*.pps,*.ppt,*.pptm,*.pptx,*.rtf,*.sldm,*.sldx,*.thmx,*.txt,*.vsd,*.wpd,*.wps,*.wri,*.xlam,*.xls,*.xlsb,*.xlsm,*.xlsx,*.xltm,*.xltx,*.xml) do if exist %%i md "מסמכים" & move "%%i" "מסמכים">>סיכום.txt & cls
 ::פונטים
 for %%i in (*.ttf,*.fnt,*.otf) do md "קבצי הרצה/גופנים" & move "%%i" "קבצי הרצה/גופנים">>סיכום.txt & cls
 ::אדובי
@@ -61,7 +60,8 @@ echo ================
 if exist םוכיס (
 echo :ורבעוהש םיצבקה רפסמ & find /c "1" סיכום.txt & del סיכום.txt
 ) else (
-echo םיצבק ואצמנ אל! & del סיכום.txt
+echo םיצבק ואצמנ אל!
+echo רוקמה תייקתב םילופכ תומש םע םיכמסמ ויהש וא & del סיכום.txt
 )
 echo.
 echo ...תינכותה תא רוגסל ידכ והשלכ שקמ לע ץחל & pause>nul 

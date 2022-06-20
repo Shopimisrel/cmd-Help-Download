@@ -3,23 +3,17 @@
 chcp 1255>nul
 color b
 title Assistant Downloads Folder 1.0
+mode CON: COLS=70 lines=22
 
-echo.
-echo. 
-choice /c 123 /m ">>> Start arranging the downloads folder press 1 other folders press 2 adout press 3"
+echo. Start arranging the downloads folder press 1      
+echo. other folders press   -------------------- 2               
+echo. adout press -------------------------------3  
+choice /c 123 /m ">>> "
 if errorlevel 3 goto about
 if errorlevel 2 goto choice
-if errorlevel 1 goto start
+if errorlevel 1 goto start                                           
 
-echo.
-echo. 
-:about
-echo Created by: @NH.LOCAL
-echo site: mitmachim.top
-echo post: https://tinyurl.com/28t4y3gy
-pause
-cls
-goto home
+
 :choice
 cls
 echo.
@@ -27,11 +21,25 @@ echo.
 echo Drag a desired folder into the window
 set/p p=">>>"
 goto start2
+
+echo.
+echo. 
+:about
+CLS
+echo              Created by: @NH.LOCAL
+echo              Renovated by: זוזמ ןמחנ@
+echo                 site: mitmachim.top
+echo           post: https://tinyurl.com/28t4y3gy
+pause
+cls
+goto home
+
 :start
 cd /d "%userprofile%\downloads"
 :start2
 cd /d %p%
 :go
+
 ::Documents
 for %%i in (*.chm,*.md,*.cpp,*.pub,*.pubx,*.csv,*.cxx,*.doc,*.docm,*.docx,*.dot,*.dotm,*.dotx,*.h,*.hpp,*.htm,*.html,*.hxx,*.ini,*.java,*.lua,*.mht,*.mhtml,*.odt,*.pdf,*.potx,*.potm,*.ppam,*.ppsm,*.ppsx,*.pps,*.ppt,*.pptm,*.pptx,*.rtf,*.sldm,*.sldx,*.thmx,*.txt,*.vsd,*.wpd,*.wps,*.wri,*.xlam,*.xls,*.xlsb,*.xlsm,*.xlsx,*.xltm,*.xltx,*.xml) do if exist %%i md "Documents" & move "%%i" "Documents">>Actions-performed.txt & cls
 ::Fonts
@@ -48,19 +56,23 @@ for %%i in (*.7z,*.ace,*.arj,*.bz2,*.cab,*.gz,*.gzip,*.jar,*.r00,*.r01,*.r02,*.r
 for %%i in (*.exe,*.msi,*.msp,*.scr) do md "Execution files" & move "%%i" "Execution files">>Actions-performed.txt & cls
 ::Applications
 for %%i in (*.apk,*.apk) do md "Execution files\אפליקציות" & move "%%i" "Execution files\Applications">>Actions-performed.txt & cls
+::Applications editor
+for %%i in (*.aia,*.aix,*.jks,*.aab,*.xpi,*.whl) do md "Execution files\Applications\Applications editor" & move "%%i" "Execution files\Applications\Applications editor">>Actions-performed.txt & cls
 ::Scripts
 for %%i in (*.bat,*.cmd,*.ps1,*.reg,*.py) do md "Execution files/Scripts" & move "%%i" "Execution files/Scripts">>Actions-performed.txt & cls
 ::file iso
 for %%i in (*.img,*.iso) do md "Execution files/file ISO" & move "%%i" "Execution files/file ISO">>Actions-performed.txt & cls
 ::photo
 for %%i in (*.bmp,*.gif,*.ico,*.jpe,*.jpeg,*.jpg,*.pcx,*.png,*.psd,*.tga,*.tif,*.tiff,*.wmf)  do md "photo" & move "%%i" "photo">>Actions-performed.txt & cls
+::Shortcuts
+for %%i in (*.lnk,*) do md "Shortcuts" & move "%%i" "Shortcuts">>Actions-performed.txt & cls
 
 Version 1
 echo ================
 if exist Actions-performed (
 echo :Number of files transferred & find /c "1" Actions performed.txt & del Actions-performed.txt
 ) else (
-echo No files found! Or there were duplicate documents in the source folder & del Actions-performed.txt
+echo Oops something went wrong maybe the file was run not in the downloads folder so we identify as an error & del Actions-performed.txt
 )
 echo.
 echo ...Click something to exit & pause>nul 
@@ -69,4 +81,4 @@ exit
 :exit
 echo.
 echo ...The program will close in a few seconds
-timeout 3 >nul
+timeout 5 >nul
